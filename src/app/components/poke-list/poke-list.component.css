@@ -1,0 +1,35 @@
+.app-title {
+  font-size: 40px;
+  background-color: #947c10;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: #883b3b;
+  text-align: center;
+}
+.pokemons-container {
+  padding: 16px;
+}
+
+.mat-card {
+  height: 100%;
+  background-color: #947c10;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.pokemon-image img {
+  width: 100%;
+}
+
+.pokemon-name,
+.pokemon-number {
+  font-size: 20px;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

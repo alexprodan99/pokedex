@@ -1,0 +1,38 @@
+<div class="pokemons-container">
+  <div class="app-title">Pokedex</div>
+  <div class="paginator">
+    <ngb-pagination
+      [collectionSize]="120"
+      [(page)]="currentPageNumber"
+      [maxSize]="maxPageNumber"
+      [boundaryLinks]="true"
+      (pageChange)="onPageChange($event)"
+    ></ngb-pagination>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      [style.margin-bottom.px]="36"
+      *ngFor="let pokemon of pagePokemons; let i = index"
+    >
+      <mat-card placement="bottom" [ngbTooltip]="createPokemonDesc(pokemon)">
+        <mat-card-content>
+          <div class="pokemon-image">
+            <img [src]="pokemon.sprites.front_default" alt="pokemon image" />
+          </div>
+          <div class="pokemon-number">
+            {{ i + 1 }}
+          </div>
+          <div class="pokemon-name">
+            {{ pokemon.name | titlecase }}
+          </div>
+          <div *ngFor="let type of extractPokemonTypes(pokemon)">
+            {{ type }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
